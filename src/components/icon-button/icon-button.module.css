@@ -1,0 +1,88 @@
+.buttonBase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: var(--color-light-0);
+  border-radius: 100%;
+  font-size: 0.875rem;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+.buttonBase:hover {
+  background-color: var(--color-light-1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.buttonBase:active {
+  background-color: var(--color-light-2);
+}
+
+.primary {
+  background-color: var(--color-primary);
+}
+
+.primary:hover {
+  background-color: rgb(17, 82, 147);
+}
+
+.primary.selected {
+  background-color: var(--color-light-0);
+  border: 1px solid var(--color-primary);
+  pointer-events: none;
+}
+
+.primary.selected > i,
+.primary.selected > span {
+  color: var(--color-primary);
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+}
+
+.secondary:hover {
+  background-color: rgb(154, 0, 54);
+}
+
+.secondary.selected.selected {
+  background-color: var(--color-light-0);
+  border: 1px solid var(--color-secondary);
+}
+
+.secondary.selected.selected > i,
+.secondary.selected.selected > span {
+  color: var(--color-secondary);
+}
+
+.primary > span,
+.primary > i,
+.secondary > span,
+.secondary > i {
+  color: var(--color-light-0);
+}
+
+.outlined:not(.primary, .secondary) {
+  border: 1px solid var(--color-light-3);
+}
+
+.buttonBase:disabled {
+  cursor: default;
+  pointer-events: none;
+  background: var(--color-disabled);
+  border: 1px solid var(--color-light-3);
+}
+
+.buttonBase:disabled > i,
+.buttonBase:disabled > span {
+  color: var(--color-light-4);
+}
+
+.selected:disabled {
+  background: var(--color-light-0);
+}
